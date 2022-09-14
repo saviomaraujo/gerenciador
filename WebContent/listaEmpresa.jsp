@@ -10,7 +10,7 @@
 </head>
 <body>
 	<ul>
-		Lista das Empresas Cadastradas: <br/>
+		Lista das Empresas Cadastradas: <br />
 		<% 
 			List<Empresa> lista = (List<Empresa>)request.getAttribute("empresas");
 		 	for (Empresa empresa : lista){
