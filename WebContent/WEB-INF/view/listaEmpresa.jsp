@@ -13,6 +13,14 @@
 <title>Listagem das Empresas Cadastradas</title>
 </head>
 <body>
+
+	<c:import url="logoutForm.jsp" />
+	
+	Usuário logado: ${usuarioLogado.login}
+	
+	<br>
+	<br>
+	  
 	<ul>
 		<c:if test="${not empty empresa}">
 			Empresa ${ empresa } cadastrada com sucesso! <br/> <br/>

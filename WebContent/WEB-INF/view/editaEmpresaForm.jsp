@@ -9,6 +9,9 @@
 <title>Cadastro</title>
 </head>
 <body>
+
+	<c:import url="logoutForm.jsp" />
+	
 	<form action="${linkEntradaAlteraEmpresa}" method="post">
 	    <input type="hidden" name="id" value="${empresa.id}"/>
 	    <input type="hidden" name="acao" value="AlteraEmpresa"/>

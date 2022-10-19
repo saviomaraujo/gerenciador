@@ -9,6 +9,7 @@ import javafx.animation.Interpolator;
 public class Banco {
 	
 	private static List<Empresa> lista = new ArrayList<>();
+	private static List<Usuario> listaUsuario = new ArrayList<>();
 	private static Integer chaveSequencial = 1;
 	
 	static{
@@ -22,6 +23,18 @@ public class Banco {
 		
 		Banco.lista.add(empresa);
 		Banco.lista.add(empresa2);
+		
+		Usuario u1 = new Usuario();
+		u1.setLogin("savio");
+		u1.setSenha("12345");
+		
+		Usuario u2 = new Usuario();
+		u2.setLogin("arthur");
+		u2.setSenha("12345");
+		
+		Banco.listaUsuario.add(u1);
+		Banco.listaUsuario.add(u2);
+
 	}
 	
 	public void adiciona(Empresa empresa){
@@ -47,6 +60,14 @@ public class Banco {
 		for (Empresa empresa : lista) {
 			if(empresa.getId() == idEmpresa)
 				return empresa;
+		}
+		return null;
+	}
+
+	public Usuario existeUsuario(String login, String senha) {
+		for (Usuario usuario : listaUsuario){
+			if(usuario.ehIgual(login, senha))
+				return usuario;
 		}
 		return null;
 	}
